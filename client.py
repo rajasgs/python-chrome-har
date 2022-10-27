@@ -8,6 +8,7 @@ from har import HAR
 from page import Page
 from dom import DOM
 from runtime import Runtime
+import sys
 
 
 class ChromeRDPWebsocket(object):
@@ -148,6 +149,9 @@ class ChromeRDPWebsocket(object):
 
 
 if __name__ == '__main__':
+
+    url = sys.argv[1]
+    
     host = 'localhost'
     port = '9222'
 
@@ -157,7 +161,7 @@ if __name__ == '__main__':
 
     wsdurl = tablist[0]['webSocketDebuggerUrl']
 
-    url = "https://www.amazon.com/Cantu-Butter-Daily-Moisturizer-Ounce/dp/B01LTIAU88"
+    # url = "https://www.amazon.com/Cantu-Butter-Daily-Moisturizer-Ounce/dp/B01LTIAU88"
     # url = 'https://www.doubleclickbygoogle.com'
 
     output_page = "Output.html"
