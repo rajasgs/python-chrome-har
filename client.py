@@ -157,8 +157,13 @@ if __name__ == '__main__':
 
     wsdurl = tablist[0]['webSocketDebuggerUrl']
 
+    url = "https://www.amazon.com/Cantu-Butter-Daily-Moisturizer-Ounce/dp/B01LTIAU88"
+    # url = 'https://www.doubleclickbygoogle.com'
+
+    output_page = "Output.html"
+
     # Fetch and render page
-    client = ChromeRDPWebsocket(wsdurl, 'https://www.doubleclickbygoogle.com')
+    client = ChromeRDPWebsocket(wsdurl, url)
 
     # Save as HAR file
     har = HAR()
@@ -178,7 +183,7 @@ if __name__ == '__main__':
 
     html_doc = res['result']['outerHTML']
 
-    with open("Output.html", "w") as text_file:
+    with open(output_page, "w") as text_file:
       text_file.write(html_doc)
 
     #################### MULTI ####################
