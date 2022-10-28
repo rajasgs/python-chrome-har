@@ -147,10 +147,7 @@ class ChromeRDPWebsocket(object):
     #     self.ws.send(json.dumps(msg))
     #     return json.loads(self.ws.recv())
 
-
-if __name__ == '__main__':
-
-    url = sys.argv[1]
+def get_single_url(url, output_file):
     
     host = 'localhost'
     port = '9222'
@@ -164,7 +161,7 @@ if __name__ == '__main__':
     # url = "https://www.amazon.com/Cantu-Butter-Daily-Moisturizer-Ounce/dp/B01LTIAU88"
     # url = 'https://www.doubleclickbygoogle.com'
 
-    output_page = "Output.html"
+    output_page = output_file
 
     # Fetch and render page
     client = ChromeRDPWebsocket(wsdurl, url)
@@ -216,3 +213,11 @@ if __name__ == '__main__':
     #         f = open('/tmp/{0}.har'.format(filename), 'w')
     #         f.write(json.dumps(har.har, indent=4))
     #         f.close()
+
+
+if __name__ == '__main__':
+
+    url = sys.argv[1]
+    output_file = "Output.html"
+
+    get_single_url(url, output_file)

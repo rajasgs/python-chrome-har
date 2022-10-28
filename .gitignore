@@ -95,3 +95,7 @@ ENV/
 
 
 Output.html
+
+urls.txt
+
+output/*
